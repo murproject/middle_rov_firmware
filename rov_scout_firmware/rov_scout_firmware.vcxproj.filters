@@ -21,24 +21,24 @@
     <ClInclude Include="__vm\.rov_scout_firmware.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\projects\ROV\scout\underwater_frimware\crc.h">
+    <ClInclude Include="crc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\projects\ROV\scout\underwater_frimware\Motor.h">
+    <ClInclude Include="Motor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\projects\ROV\scout\underwater_frimware\Scout.h">
+    <ClInclude Include="Scout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\projects\ROV\scout\underwater_frimware\crc.cpp">
+    <ClCompile Include="crc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\projects\ROV\scout\underwater_frimware\Motor.cpp">
+    <ClCompile Include="Motor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\projects\ROV\scout\underwater_frimware\Scout.cpp">
+    <ClCompile Include="Scout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
