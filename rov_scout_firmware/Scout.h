@@ -10,29 +10,34 @@
 #include <stdint.h>
 class Scout {
 public:
-    Scout();
-    void set_horizontal_motor(int8_t x, int8_t y);
-    void set_vertical_motor(int8_t x, int8_t y);
+    Scout(Servo& servo);
+    void set_horizontal_motor(int16_t x, int16_t y);
+    void set_vertical_motor(int16_t x, int16_t y);
     void set_manipulator_action(uint8_t action);
-    void update(int8_t lx, int8_t ly, int8_t rx, int8_t ry, uint8_t action);
+	void setCamera(Servo *camera);
+    void update(int16_t lx, int16_t ly, int16_t rx, int16_t ry, uint8_t action, int8_t camera_action);
     bool is_updated();
     void apply_update();
+	void camera_rotate();
 private:
     Motor m_left;
     Motor m_right;
     Motor m_up_one;
     Motor m_up_two;
-    Servo m_manipulator;
+    Servo &m_manipulator;
+	Servo *m_camera;
 
     int m_manipulator_state;
-    int8_t m_lx;
-    int8_t m_ly;
-    int8_t m_rx;
-    int8_t m_ry;
+    int16_t m_lx;
+    int16_t m_ly;
+    int16_t m_rx;
+    int16_t m_ry;
     uint8_t m_action;
+	int8_t m_camera_action;
+	int16_t m_camera_angle;
     bool m_updated;
 
-    void regulator(int8_t power, int8_t error, Motor motor_one, Motor motor_two);
+    void regulator(int16_t power, int16_t error, Motor motor_one, Motor motor_two);
 };
 
 

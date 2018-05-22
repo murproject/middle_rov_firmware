@@ -20,16 +20,27 @@
 #define VERTICAL_MOTOR_Y_COMMAND 4
 #define VERTICAL_MOTOR_X_COMMAND 5
 #define MANIPULATOR_COMMAND 6
-#define CRC_COMMAND 7
-#define COMMAND_BUFFER_SIZE 8
+#define CAMERA_COMMAND 7
+#define CRC_COMMAND 8
+#define COMMAND_BUFFER_SIZE 9
 
 
-Scout robot;
+
+Servo myservo;
+Servo camera;
+Scout robot(myservo);
+
 void setup() {
+	camera.attach(44);
+	myservo.attach(45);
+	robot.setCamera(&camera);
 	Serial.begin(115200);
 	Serial2.begin(115200);
 }
+int pos = 0;
+
 void loop() {
+
 	if (robot.is_updated()) {
 		robot.apply_update();
 	}
@@ -50,7 +61,8 @@ void serialEvent2() {
 				buffer[HORIZONTAL_MOTOR_Y_COMMAND],
 				buffer[VERTICAL_MOTOR_X_COMMAND], 
 				buffer[VERTICAL_MOTOR_Y_COMMAND],
-				buffer[MANIPULATOR_COMMAND]);
+				buffer[MANIPULATOR_COMMAND],
+				buffer[CAMERA_COMMAND]);
 		}
 	}
 }
