@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+*.xml
+rov_scout_firmware/__vm/Upload.vmps.xml
+*.xml
+rov_scout_firmware/__vm/Configuration.Debug.vmps.xml
+*.xml
