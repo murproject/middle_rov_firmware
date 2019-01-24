@@ -7,7 +7,7 @@
 
 #define GRAB 1
 #define RELEASE 2
-
+//				ПИНЫ МОТОРОВ
 Scout::Scout(Servo& servo) : m_left(6, 7), m_right(8, 9), m_up_one(2, 3), m_up_two(4, 5), m_manipulator_state(90), m_manipulator(servo), m_camera_angle(100), m_camera_action(0)
 {
     m_left.setPower(100);
